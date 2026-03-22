@@ -147,17 +147,23 @@ header {
   justify-content: center;
   align-items: flex-start; 
   gap: 4px;
+  flex: 1; /* Aprovecha todo el espacio disponible hacia la derecha */
+  min-width: 0; /* CRÍTICO: Evita que el contenedor flex se desborde, forzando el salto de línea */
+  padding-right: 12px; /* Identifica y respeta el margen derecho en celular */
 }
 
 .brand-info h1 {
   margin: 0;
   font-weight: 1000;
-  font-size: clamp(28px, 8vw, 42px);
+  font-size: clamp(22px, 6vw, 36px); /* Letra ligeramente más pequeña para acomodar textos largos */
   letter-spacing: 1px;
-  line-height: 1;
+  line-height: 1.15; /* Interlineado ajustado para que las líneas no se peguen al hacer el salto */
   color: #ffffff;
   text-transform: uppercase;
   text-shadow: 0 4px 16px rgba(0,0,0,0.5), 0 0 15px rgba(245, 245, 245, 0.4); 
+  width: 100%;
+  overflow-wrap: break-word; /* Fuerza el salto de línea de manera precisa */
+  word-wrap: break-word;
 }
 
 /* ¡Logo Súper Gigante y Protagonista! */
@@ -2179,7 +2185,7 @@ header{
   header{ padding:12px 14px 13px !important; }
   .brand-group{ gap:14px !important; }
   .logoWrap{ width:88px !important; height:88px !important; }
-  .brand-info h1{ font-size:clamp(24px, 7vw, 34px) !important; }
+  .brand-info h1{ font-size:clamp(20px, 6vw, 30px) !important; line-height: 1.15 !important; }
   .search-wrapper{ max-width:240px !important; }
   .search-bar{ height:54px !important; font-size:24px !important; }
   .raffle{ border-radius:18px !important; }
