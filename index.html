@@ -155,17 +155,18 @@ header {
 .brand-info h1 {
   margin: 0;
   font-weight: 1000;
-  font-size: clamp(14px, 4.5vw, 22px); 
-  letter-spacing: 0.5px;
-  line-height: 1.15; /* Un poco más de aire entre líneas */
+  /* Tamaño mucho más sensato para nombres largos */
+  font-size: clamp(14px, 4.5vw, 20px) !important; 
+  letter-spacing: 0px !important; /* Quitamos el espaciado para ganar milímetros */
+  line-height: 1.15;
   color: #ffffff;
   text-transform: uppercase;
   text-shadow: 0 4px 16px rgba(0,0,0,0.5), 0 0 15px rgba(245, 245, 245, 0.4);
   
-  /* EFECTO PREMIUM PARA SALTO DE LÍNEA */
+  /* Salto de línea natural y balanceado */
   white-space: normal !important; 
-  text-wrap: balance; /* Distribuye el texto de forma simétrica */
-  word-break: break-word;
+  text-wrap: balance; 
+  /* (Eliminamos la regla word-break) */
   width: 100%;
 }
 
@@ -2198,8 +2199,10 @@ header{
 @media (max-width: 768px){
   header{ padding:12px 14px 13px !important; }
   .brand-group{ gap:14px !important; }
-  .logoWrap{ width:88px !important; height:88px !important; }
-  .brand-info h1{ font-size:clamp(24px, 7vw, 34px) !important; }
+  /* Reducimos un pelín el logo para darle más espacio al texto */
+  .logoWrap{ width:75px !important; height:75px !important; }
+  /* Tamaño de letra adaptado a tu nombre largo */
+  .brand-info h1{ font-size: clamp(14px, 4.5vw, 18px) !important; }
   .search-wrapper{ max-width:240px !important; }
   .search-bar{ height:54px !important; font-size:24px !important; }
   .raffle{ border-radius:18px !important; }
