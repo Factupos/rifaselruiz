@@ -147,22 +147,25 @@ header {
   justify-content: center;
   align-items: flex-start; 
   gap: 4px;
+  /* REGLAS CLAVE PARA RESPETAR EL ESPACIO */
+  flex: 1; 
+  min-width: 0; 
 }
 
 .brand-info h1 {
   margin: 0;
   font-weight: 1000;
-  /* Permite que la fuente se reduzca hasta 14px en móviles para que quepa todo */
-  font-size: clamp(14px, 4.5vw, 42px);
+  font-size: clamp(14px, 4.5vw, 22px); 
   letter-spacing: 0.5px;
-  line-height: 1;
+  line-height: 1.15; /* Un poco más de aire entre líneas */
   color: #ffffff;
   text-transform: uppercase;
   text-shadow: 0 4px 16px rgba(0,0,0,0.5), 0 0 15px rgba(245, 245, 245, 0.4);
-  /* REGLAS CLAVE PARA EVITAR EL SALTO DE LÍNEA */
-  white-space: nowrap; 
-  overflow: hidden;
-  text-overflow: ellipsis; /* Agrega "..." solo si la pantalla es minúscula */
+  
+  /* EFECTO PREMIUM PARA SALTO DE LÍNEA */
+  white-space: normal !important; 
+  text-wrap: balance; /* Distribuye el texto de forma simétrica */
+  word-break: break-word;
   width: 100%;
 }
 
@@ -1052,21 +1055,23 @@ body.search-has-text #raffles{ display:none !important; }
 }
 
 .branch-main-title {
-  margin:0; 
-  font-size:clamp(14px, 4.5vw, 32px); 
-  font-weight:1000; 
-  letter-spacing:0.5px; 
-  text-transform:uppercase; 
+  margin: 0; 
+  font-size: clamp(14px, 4vw, 20px); 
+  font-weight: 1000; 
+  letter-spacing: 0.5px; 
+  text-transform: uppercase; 
   color: #FFD700;
   text-shadow: 0 12px 28px rgba(0,0,0,.8), 0 0 20px rgba(255,215,0,0.5);
   text-align: left; 
-  line-height: 1.1; 
-  flex:1; 
-  min-width:0;
-  /* REGLAS CLAVE PARA EVITAR EL SALTO DE LÍNEA */
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.15; 
+  flex: 1; 
+  min-width: 0;
+  
+  /* EFECTO PREMIUM Y EVASIÓN DEL BOTÓN */
+  white-space: normal !important;
+  text-wrap: balance;
+  word-break: break-word;
+  padding-right: 65px; /* Crea el hueco exacto para que el botón no lo tape */
 }
 
 .branch-grid{
